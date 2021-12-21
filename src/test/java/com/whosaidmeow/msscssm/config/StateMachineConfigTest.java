@@ -10,8 +10,6 @@ import org.springframework.statemachine.config.StateMachineFactory;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class StateMachineConfigTest {
 
@@ -24,7 +22,7 @@ class StateMachineConfigTest {
         stateMachine.start();
 
         System.out.println(stateMachine.getState().toString());
-        stateMachine.sendEvent(PaymentEvent.PRE_AUTHORIZED);
+        stateMachine.sendEvent(PaymentEvent.PRE_AUTHORIZE);
         System.out.println(stateMachine.getState().toString());
         stateMachine.sendEvent(PaymentEvent.PRE_AUTH_APPROVED);
         System.out.println(stateMachine.getState().toString());
